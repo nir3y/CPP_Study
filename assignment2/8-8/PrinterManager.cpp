@@ -2,14 +2,6 @@
 #include <string>
 using namespace std;
 
-/*
-		--해결해야 할 것---
- 용지 수만 부족할때, 토너와 잉크 줄어들지 않게 수정하기
- 동적 할당 해제하는 소멸자 코드 작성하기
- 안녕녕녕
-*/
-
-
 class printer
 {
 protected:
@@ -17,7 +9,7 @@ protected:
 	int printCount, availableCount; //인쇄매수, 인쇄종이 잔량
 public:
 	printer(string model, string manufacturer, int printCount, int availableCount); //각각 모델명, 제조사, 인쇄매수, 인쇄종이 잔량
-	void print(int pages); //pages만큼 인쇄종이 잔량 차감
+	bool print(int pages); //pages만큼 인쇄종이 잔량 차감
 	void status(); //현재 프린터 정보 및 상태를 출력하는 함수
 };
 
@@ -30,18 +22,21 @@ printer::printer(string model, string manufacturer, int printCount, int availabl
 	this->availableCount = availableCount;
 }
 
-void printer::print(int pages)
+bool printer::print(int pages)
 {
-	if (availableCount < pages) { cout << "용지가 부족하여 프린트 할 수 없습니다." << endl; }
+	if (availableCount < pages) {
+		cout << "용지가 부족하여 프린트 할 수 없습니다." << endl;
+		return false; 
+	}
 	else {
-		cout << "프린트하였습니다." << endl;
 		availableCount -= pages;
+		return true;
 	}
 }
 
 void printer::status()
 {
-	cout << "잉크젯 : " << model << ", " << manufacturer << " ,남은 종이" << availableCount;
+	cout << model << ", " << manufacturer << " ,남은 종이" << availableCount;
 }
 
 
@@ -51,7 +46,7 @@ class InkJetPrinter : public printer
 public:
 	InkJetPrinter(string model, string manufacturer, int printCount,
 		int availableCount, int availableInk);
-	void printInkJet(int pages);
+	bool printInkJet(int pages);
 	void status();
 };
 
@@ -62,19 +57,45 @@ InkJetPrinter::InkJetPrinter(string model, string manufacturer, int printCount,
 	this->availableInk = availableInk;
 }
 
-void InkJetPrinter::printInkJet(int pages)
+bool InkJetPrinter::printInkJet(int pages)
 {
-	if (availableInk < pages) { cout << "잉크가 부족하여 프린트 할 수 없습니다." << endl; }
-	else {
-		print(pages);
-		availableInk -= pages;
+	bool TorF = print(pages);
+	//용지도 잉크도 충분할 때, print()함수로 availableCount 감소. availableInk 감소 
+	if (TorF && availableInk >= pages) { 
+		cout << "프린트하였습니다." << endl;
+		availableInk -= pages; 
+		return true; 
 	}
+	
+	//용지와 잉크 둘 다 부족할 때, 각각 부족하다고 나타내는 문장 출력
+	else if (!TorF)
+	{
+		if (availableInk < pages) { 
+			
+			cout << "잉크가 부족하여 프린트 할 수 없습니다." << endl;
+			return false;
+		}
+		//용지만 부족할 때
+		return false; 
+	}
+
+	//잉크만 부족하나 용지는 충분할 때 -> print()함수 내에서 pages만큼 availableCount 값이 감소함.
+	//else문 내에서 availableCount 값 복구
+	else
+	{
+		availableCount += pages;
+		cout << "잉크가 부족하여 프린트 할 수 없습니다." << endl;
+		return false;
+
+	}
+	
 }
 
 void InkJetPrinter::status()
 {
+	cout << "잉크젯 : ";
 	printer::status();
-	cout << " ,남은 잉크 " << availableInk << endl;
+	cout << ", 남은 잉크 " << availableInk << endl;
 }
 
 class LaserPrinter : public printer
@@ -83,7 +104,7 @@ class LaserPrinter : public printer
 public:
 	LaserPrinter(string model, string manufacturer, int printCount,
 		int availableCount, int availableToner);
-	void printLaser(int pages);
+	bool printLaser(int pages);
 	void status();
 };
 
@@ -94,17 +115,38 @@ LaserPrinter::LaserPrinter(string model, string manufacturer, int printCount,
 	this->availableToner = availableToner;
 }
 
-void LaserPrinter::printLaser(int pages)
+bool LaserPrinter::printLaser(int pages)
 {
-	if (availableToner < pages) { cout << "토너가 부족하여 프린트 할 수 없습니다." << endl; }
-	else {
-		print(pages);
+	bool TorF = print(pages);
+	//용지도 토너도 충분할 때, print()함수로 availableCount 감소. availableToner 감소 
+	if (TorF && availableToner >= pages) {
+		cout << "프린트하였습니다." << endl;
 		availableToner -= pages;
+		return true;
+	}
+
+	//용지와 토너 둘 다 부족할 때, 각각 부족하다고 나타내는 문장 출력
+	else if (!TorF){
+		if (availableToner < pages) {
+			cout << "토너가 부족하여 프린트 할 수 없습니다." << endl;
+			return false;
+		}
+		//용지만 부족할 때
+		else{ return false; }
+	}
+
+	//토너만 부족하나 용지는 충분할 때 -> print()함수 내에서 pages만큼 availableCount 값이 감소함.
+	//else문 내에서 availableCount 값 복구
+	else{
+		availableCount += pages;
+		cout << "토너가 부족하여 프린트 할 수 없습니다." << endl;
+		return false;
 	}
 }
 
 void LaserPrinter::status()
 {
+	cout << "레이저 : ";
 	printer::status();
 	cout << ", 남은 토너 " << availableToner << endl;
 }
@@ -118,7 +160,7 @@ int main()
 	int printer, pages; //프린터 선택, 매수 입력받을 변수
 	string YorN; //y 또는 n을 입력받을 변수
 
-	InkJetPrinter* inkjet = new InkJetPrinter("Officejet V40", "HP", 0, 5, 10);
+	InkJetPrinter* inkjet = new InkJetPrinter("Officejet V40", "HP", 0, 5, 4 );
 	LaserPrinter* laser = new LaserPrinter("SCX-6x45", "삼성전자", 0, 3, 20);
 	cout << "현재 작동중인 2 대의 프린터는 아래와 같다." << endl;
 	inkjet->status();
@@ -150,6 +192,8 @@ int main()
 
 	cout << endl;
 	cout << "프로그램을 종료합니다." << endl;
+	delete inkjet;
+	delete laser;
 	system("pause");
 	return 0;
 }
