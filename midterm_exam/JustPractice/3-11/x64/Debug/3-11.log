@@ -1,9 +1,0 @@
-﻿  Adder.cpp
-  Adder.h
-  calculator.cpp
-  calculator.h
-  main.cpp
-  코드를 생성하고 있습니다...
-x64\Debug\Adder.obj : warning LNK4042: 개체가 두 번 이상 지정되었습니다. 나머지는 무시됩니다.
-x64\Debug\calculator.obj : warning LNK4042: 개체가 두 번 이상 지정되었습니다. 나머지는 무시됩니다.
-  3-11.vcxproj -> C:\Users\jung0\source\repos\정예린\JustPractice\x64\Debug\3-11.exe
