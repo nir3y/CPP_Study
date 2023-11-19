@@ -1,8 +1,2 @@
 ﻿  SortedArray.cpp
-SortedArray.obj : error LNK2019: "public: __cdecl SortedArray::SortedArray(void)" (??0SortedArray@@QEAA@XZ)main 함수에서 참조되는 확인할 수 없는 외부 기호
-SortedArray.obj : error LNK2019: "public: __cdecl SortedArray::SortedArray(int * const,int)" (??0SortedArray@@QEAA@QEAHH@Z)main 함수에서 참조되는 확인할 수 없는 외부 기호
-SortedArray.obj : error LNK2019: "public: __cdecl SortedArray::~SortedArray(void)" (??1SortedArray@@QEAA@XZ)main 함수에서 참조되는 확인할 수 없는 외부 기호
-SortedArray.obj : error LNK2019: "public: class SortedArray __cdecl SortedArray::operator+(class SortedArray &)" (??HSortedArray@@QEAA?AV0@AEAV0@@Z)main 함수에서 참조되는 확인할 수 없는 외부 기호
-SortedArray.obj : error LNK2019: "public: class SortedArray & __cdecl SortedArray::operator=(class SortedArray const &)" (??4SortedArray@@QEAAAEAV0@AEBV0@@Z)main 함수에서 참조되는 확인할 수 없는 외부 기호
-SortedArray.obj : error LNK2019: "public: void __cdecl SortedArray::show(void)" (?show@SortedArray@@QEAAXXZ)main 함수에서 참조되는 확인할 수 없는 외부 기호
-C:\Users\jung0\source\repos\C++\assignment2\x64\Debug\7-12.exe : fatal error LNK1120: 6개의 확인할 수 없는 외부 참조입니다.
+  7-12.vcxproj -> C:\Users\jung0\source\repos\정예린\assignment2\x64\Debug\7-12.exe
