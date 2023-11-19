@@ -1,0 +1,40 @@
+﻿  Add.cpp
+C:\Users\jung0\source\repos\정예린\practice\3-10\Add.cpp(17,1): error C2063: 'Add::calculate': 함수가 아닙니다.
+  Div.cpp
+C:\Users\jung0\source\repos\정예린\practice\3-10\Div.cpp(17,1): error C2063: 'Div::calculate': 함수가 아닙니다.
+  main.cpp
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(4,1): error C2760: 구문 오류: 여기서 'int'은(는) 예상치 못한 오류였습니다. 예상된 오류는 ';'였습니다
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(4,12): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(5,2): error C2065: 'Add': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(5,6): error C2146: 구문 오류: ';'이(가) 'a' 식별자 앞에 없습니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(5,6): error C2065: 'a': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(6,2): error C2065: 'Sub': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(6,6): error C2146: 구문 오류: ';'이(가) 's' 식별자 앞에 없습니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(6,6): error C2065: 's': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(7,2): error C2065: 'Mul': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(7,6): error C2146: 구문 오류: ';'이(가) 'm' 식별자 앞에 없습니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(7,6): error C2065: 'm': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(8,2): error C2065: 'Div': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(8,6): error C2146: 구문 오류: ';'이(가) 'd' 식별자 앞에 없습니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(8,6): error C2065: 'd': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(11,3): error C2065: 'cout': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(14,3): error C2065: 'cin': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(16,14): error C2065: 'a': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(16,32): error C2065: 'cout': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(16,40): error C2065: 'a': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(17,14): error C2065: 's': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(17,32): error C2065: 'cout': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(17,40): error C2065: 's': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(18,14): error C2065: 'm': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(18,32): error C2065: 'cout': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(18,40): error C2065: 'm': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(19,14): error C2065: 'd': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(19,32): error C2065: 'cout': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(19,40): error C2065: 'd': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(21,3): error C2065: 'cout': 선언되지 않은 식별자입니다.
+C:\Users\jung0\source\repos\정예린\practice\3-10\main.cpp(21,11): error C2065: 'endl': 선언되지 않은 식별자입니다.
+  Mul.cpp
+C:\Users\jung0\source\repos\정예린\practice\3-10\Mul.cpp(17,1): error C2063: 'Mul::calculate': 함수가 아닙니다.
+  Sub.cpp
+C:\Users\jung0\source\repos\정예린\practice\3-10\Sub.cpp(17,1): error C2063: 'Sub::calculate': 함수가 아닙니다.
+  코드를 생성하고 있습니다...

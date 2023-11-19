@@ -1,0 +1,3 @@
+﻿  Book.cpp
+C:\Users\jung0\source\repos\정예린\practice7\7-3\Book.cpp(68): warning C4715: 'Matrix::operator==': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  7-3.vcxproj -> C:\Users\jung0\source\repos\정예린\practice7\x64\Debug\7-6.exe
