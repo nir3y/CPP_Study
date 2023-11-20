@@ -7,7 +7,7 @@ class SortedArray {
 	void sort(); // 정수 배열을 오름차순으로 정렬
 public:
 	SortedArray() { p = NULL; size = 0; }; // p는 NULL로 size는 0으로 초기화
-	SortedArray(SortedArray& src); // 복사 생성자
+	SortedArray(const SortedArray& src); // 복사 생성자
 	SortedArray(int p[], int size); // 생성자. 정수 배열과 크기를 전달받음
 	~SortedArray() { delete []p; }
 	SortedArray operator + (SortedArray& op2);
@@ -18,8 +18,8 @@ public:
 void SortedArray::sort()
 {
 	int tmp;
-	for (int i = 0; i < size; i++){
-		for (int j = 0; j < size - i - 1; j++) {
+	for (int i = 0; i < this->size; i++){
+		for (int j = 0; j < this->size - i - 1; j++) {
 			if (p[j] > p[j + 1]) { 
 				tmp = p[j]; 
 				p[j] = p[j + 1];
@@ -30,7 +30,7 @@ void SortedArray::sort()
 }
 
 //복사 생성자
-SortedArray::SortedArray(SortedArray& src)
+SortedArray::SortedArray(const SortedArray& src)
 {
 	this->size = src.size;
 	this->p = new int[size];
